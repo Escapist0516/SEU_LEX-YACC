@@ -1,0 +1,38 @@
+﻿  main.cpp
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\structs.h(16,2): warning C4091: “typedef ”: 没有声明变量时忽略“Rules”的左侧
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\structs.h(25,2): warning C4091: “typedef ”: 没有声明变量时忽略“NFAstate”的左侧
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\structs.h(33,2): warning C4091: “typedef ”: 没有声明变量时忽略“NFA”的左侧
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\structs.h(41,2): warning C4091: “typedef ”: 没有声明变量时忽略“DFAstate”的左侧
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\structs.h(49,3): warning C4091: “typedef ”: 没有声明变量时忽略“DFA”的左侧
+  nfa_dfa.cpp
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\structs.h(16,2): warning C4091: “typedef ”: 没有声明变量时忽略“Rules”的左侧
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\structs.h(25,2): warning C4091: “typedef ”: 没有声明变量时忽略“NFAstate”的左侧
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\structs.h(33,2): warning C4091: “typedef ”: 没有声明变量时忽略“NFA”的左侧
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\structs.h(41,2): warning C4091: “typedef ”: 没有声明变量时忽略“DFAstate”的左侧
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\structs.h(49,3): warning C4091: “typedef ”: 没有声明变量时忽略“DFA”的左侧
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\nfa_dfa.cpp(222,27): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\nfa_dfa.cpp(314,23): warning C4018: “<”: 有符号/无符号不匹配
+  re_nfa.cpp
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\structs.h(16,2): warning C4091: “typedef ”: 没有声明变量时忽略“Rules”的左侧
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\structs.h(25,2): warning C4091: “typedef ”: 没有声明变量时忽略“NFAstate”的左侧
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\structs.h(33,2): warning C4091: “typedef ”: 没有声明变量时忽略“NFA”的左侧
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\structs.h(41,2): warning C4091: “typedef ”: 没有声明变量时忽略“DFAstate”的左侧
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\structs.h(49,3): warning C4091: “typedef ”: 没有声明变量时忽略“DFA”的左侧
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\re_nfa.cpp(43,20): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\re_nfa.cpp(75,20): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\re_nfa.cpp(82,46): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\re_nfa.cpp(95,46): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\re_nfa.cpp(123,20): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\re_nfa.cpp(131,39): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\re_nfa.cpp(149,39): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\re_nfa.cpp(173,20): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\re_nfa.cpp(180,18): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\re_nfa.cpp(182,18): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\re_nfa.cpp(184,18): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\re_nfa.cpp(186,18): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\re_nfa.cpp(234,21): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\re_nfa.cpp(313,20): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\re_nfa.cpp(317,21): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_lex\seu_lex\seu_lex\re_nfa.cpp(357,32): warning C4018: “<”: 有符号/无符号不匹配
+  正在生成代码...
+  seu_lex.vcxproj -> D:\Coding\CompileMethod\seu_lex\seu_lex\Debug\seu_lex.exe

@@ -1,0 +1,19 @@
+﻿  calculate_first.cpp
+D:\Coding\CompileMethod\seu_yacc\seu_yacc\seu_yacc\calculate_first.cpp(53,13): warning C4018: “<=”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_yacc\seu_yacc\seu_yacc\calculate_first.cpp(104,11): warning C4018: “<=”: 有符号/无符号不匹配
+  construct_lr1.cpp
+D:\Coding\CompileMethod\seu_yacc\seu_yacc\seu_yacc\construct_lr1.cpp(73,27): warning C4018: “<”: 有符号/无符号不匹配
+  construct_table.cpp
+D:\Coding\CompileMethod\seu_yacc\seu_yacc\seu_yacc\construct_table.cpp(31,23): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_yacc\seu_yacc\seu_yacc\construct_table.cpp(105,43): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_yacc\seu_yacc\seu_yacc\construct_table.cpp(109,47): warning C4018: “<”: 有符号/无符号不匹配
+  convert.cpp
+  gengerate_code.cpp
+D:\Coding\CompileMethod\seu_yacc\seu_yacc\seu_yacc\gengerate_code.cpp(50,20): warning C4018: “<”: 有符号/无符号不匹配
+  lr1_to_lalr.cpp
+  main.cpp
+D:\Coding\CompileMethod\seu_yacc\seu_yacc\seu_yacc\main.cpp(95,20): warning C4018: “<”: 有符号/无符号不匹配
+D:\Coding\CompileMethod\seu_yacc\seu_yacc\seu_yacc\main.cpp(55,6): warning C4101: “startInt”: 未引用的局部变量
+  read_yacc.cpp
+  正在生成代码...
+  seu_yacc.vcxproj -> D:\Coding\CompileMethod\seu_yacc\seu_yacc\Debug\seu_yacc.exe

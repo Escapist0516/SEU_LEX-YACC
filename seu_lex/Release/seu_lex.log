@@ -1,0 +1,23 @@
+﻿  generate_code.cpp
+D:\编译原理\lex\seu_lex\seu_lex\structs.h(16,2): warning C4091: “typedef ”: 没有声明变量时忽略“Rules”的左侧
+D:\编译原理\lex\seu_lex\seu_lex\structs.h(25,2): warning C4091: “typedef ”: 没有声明变量时忽略“NFAstate”的左侧
+D:\编译原理\lex\seu_lex\seu_lex\structs.h(33,2): warning C4091: “typedef ”: 没有声明变量时忽略“NFA”的左侧
+D:\编译原理\lex\seu_lex\seu_lex\structs.h(41,2): warning C4091: “typedef ”: 没有声明变量时忽略“DFAstate”的左侧
+D:\编译原理\lex\seu_lex\seu_lex\structs.h(49,3): warning C4091: “typedef ”: 没有声明变量时忽略“DFA”的左侧
+D:\编译原理\lex\seu_lex\seu_lex\generate_code.cpp(8,20): warning C4018: “<”: 有符号/无符号不匹配
+D:\编译原理\lex\seu_lex\seu_lex\generate_code.cpp(13,20): warning C4018: “<”: 有符号/无符号不匹配
+D:\编译原理\lex\seu_lex\seu_lex\generate_code.cpp(21,22): warning C4018: “<”: 有符号/无符号不匹配
+D:\编译原理\lex\seu_lex\seu_lex\generate_code.cpp(38,26): warning C4018: “<”: 有符号/无符号不匹配
+D:\编译原理\lex\seu_lex\seu_lex\generate_code.cpp(70,20): warning C4018: “<”: 有符号/无符号不匹配
+  main.cpp
+D:\编译原理\lex\seu_lex\seu_lex\structs.h(16,2): warning C4091: “typedef ”: 没有声明变量时忽略“Rules”的左侧
+D:\编译原理\lex\seu_lex\seu_lex\structs.h(25,2): warning C4091: “typedef ”: 没有声明变量时忽略“NFAstate”的左侧
+D:\编译原理\lex\seu_lex\seu_lex\structs.h(33,2): warning C4091: “typedef ”: 没有声明变量时忽略“NFA”的左侧
+D:\编译原理\lex\seu_lex\seu_lex\structs.h(41,2): warning C4091: “typedef ”: 没有声明变量时忽略“DFAstate”的左侧
+D:\编译原理\lex\seu_lex\seu_lex\structs.h(49,3): warning C4091: “typedef ”: 没有声明变量时忽略“DFA”的左侧
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+D:\编译原理\lex\seu_lex\seu_lex\read_lex.cpp(13): warning C4715: “split”: 不是所有的控件路径都返回值
+  All 1636 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  seu_lex.vcxproj -> D:\编译原理\lex\seu_lex\Release\seu_lex.exe

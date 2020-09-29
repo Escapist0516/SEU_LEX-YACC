@@ -1,0 +1,256 @@
+%token NUMBER IDENTIFIER
+%token VOID INT CHAR DOUBLE FLOAT LONG SHORT BOOL FALSE TRUE
+%token STATIC SIZEOF ENUM TYPEDEF STRUCT CONST
+%token SWITCH BREAK CASE DEFAULT DO WHILE FOR AUTO CONTINUE IF ELSE RETURN
+%token ADD_ASSIGN SUB_ASSIGN MUL_ASSIGN DIV_ASSIGN
+%token PTR_OP INC_OP DEC_OP AND_OP OR_OP LE_OP GE_OP EQ_OP NE_OP NOT_OP
+
+%right = ADD_ASSIGN SUB_ASSIGN MUL_ASSIGN DIV_ASSIGN
+%left EQ_OP NE_OP
+%left OR_OP
+%left AND_OP
+%left ELSE
+%left < > LE_OP GE_OP
+%left + -
+%left * /
+
+
+%%
+program
+    : declarations
+    ;
+declarations
+    : var_declaration declarations
+    | fun_declaration declarations
+    | var_declaration
+    | fun_declaration
+    ;
+fun_declaration
+    : type IDENTIFIER '(' parameters ')' block
+    | type IDENTIFIER '(' parameters ')' ';'
+    | type IDENTIFIER '(' ')' block
+    | type IDENTIFIER '(' ')' ';'
+    ;
+type
+    : IDENTIFIER '*'
+    | CHAR '*'
+    | CONST CHAR '*'
+    | INT '*'
+    | VOID
+    | CHAR
+    | SHORT
+    | INT
+    | LONG
+    | FLOAT
+    | DOUBLE
+    | BOOL
+    | ENUM
+    | IDENTIFIER
+    ;
+parameters
+    : type IDENTIFIER ',' parameters
+    | type IDENTIFIER
+    ;
+block
+    : '{' local_declarations statements '}'
+    | '{' local_declarations '}'
+    | '{' statements '}'
+    | '{' '}'
+    | ';'
+    ;
+var_declaration
+    : type identifiers ';'
+    | ENUM IDENTIFIER '{' identifiers '}' ';'
+    | TYPEDEF STRUCT IDENTIFIER '{' declarations '}' ';'
+    ;
+identifiers
+    : identifier
+    | identifiers ',' identifier
+    | identifiers ',' assign_statement
+    ;
+identifier
+    : assign_statement
+    | IDENTIFIER '[' NUMBER ']' '[' NUMBER ']'
+    | IDENTIFIER '[' IDENTIFIER ']'
+    | IDENTIFIER '[' NUMBER ']'
+    | IDENTIFIER '[' ']'
+    | IDENTIFIER '.' IDENTIFIER
+    | IDENTIFIER PTR_OP IDENTIFIER
+    | IDENTIFIER
+    ;
+local_declarations
+    : var_declaration
+    | local_declarations var_declaration
+    ;
+statements
+    : statement
+    | statements statement
+    ;
+statement
+    : for_statement
+    | WHILE '(' exp ')' block
+    | RETURN exp ';'
+    | assign_statements
+    | BREAK ';'
+    | expression_statement
+    | fun_statement
+    | if_statement
+    | SWITCH '(' identifier ')' block
+    | case_statement
+    | block
+    ;
+fun_statement
+    : IDENTIFIER '(' args ')' ';'
+    ;
+for_statement
+    : FOR '(' var_declaration expression_statement exp ')' block
+    | FOR '(' expression_statement expression_statement exp ')' block
+    ;
+assign_statements
+    : assign_statements ',' assign_statement
+    | assign_statement ';'
+    | assign_statement
+    ;
+assign_statement
+    : identifier '=' exp
+    | '*' identifier '=' exp
+    | identifier ADD_ASSIGN exp
+    | identifier SUB_ASSIGN exp
+    | identifier MUL_ASSIGN exp
+    | identifier DIV_ASSIGN exp
+    ;
+expression_statement
+    : ';'
+    | exp ';'
+    ;
+if_statement
+    : IF '(' exp ')' block
+    | IF '(' exp ')' block ELSE block
+    ;
+case_statement
+    : CASE simple_expression ':' statements
+    | DEFAULT ':' statements
+    ;
+exp
+    : simple_expression
+    | mul_expression
+    | add_expression
+    | eq_expression
+    | and_expression
+    ;
+simple_expression
+    : '{' args '}'
+    | TRUE
+    | FALSE
+    | INC_OP IDENTIFIER
+    | DEC_OP IDENTIFIER
+    | IDENTIFIER INC_OP
+    | IDENTIFIER DEC_OP
+    | NOT_OP IDENTIFIER
+    | ''' IDENTIFIER '''
+    | '"' IDENTIFIER '"'
+    | NUMBER
+    | identifier
+    ;
+mul_expression
+    : exp '*' exp
+    | exp '/' exp
+    ;
+add_expression
+    : exp '+' exp
+    | exp '-' exp
+    ;
+eq_expression
+    : exp EQ_OP exp
+    | exp NE_OP exp
+    | exp '>' exp
+    | exp '<' exp
+    | exp GE_OP exp
+    | exp LE_OP exp
+    ;
+and_expression
+    : exp AND_OP exp
+    | exp OR_OP exp
+    ;
+args
+    : exp
+    | args ',' exp
+    ;
+%%
+struct treeNode {
+	treeNode() {}
+	treeNode(string _content) { content = _content; size = 0; pos = 1; dep = 0; fa = -1; }
+	int size, dep, pos;
+	string content;
+	vector<int>sons;
+	int fa;
+};
+vector<treeNode>syntaxTree;
+void dfs1(treeNode* u, int _dep) {
+	u->dep = _dep;
+	if (u->sons.empty()) {
+		u->size = u->content.size() + 1;
+		return;
+	}
+	for (auto son : u->sons) {
+		dfs1(&syntaxTree[son], _dep + 1);
+		u->size += syntaxTree[son].size;
+	}
+}
+
+void dfs2(treeNode* u) {
+	if (u->sons.empty()) return;
+	int curPos = u->pos;
+	syntaxTree[u->sons[0]].pos = curPos;
+	for (int t = 1; t < u->sons.size(); ++t)
+		syntaxTree[u->sons[t]].pos = syntaxTree[u->sons[t - 1]].pos + syntaxTree[u->sons[t - 1]].size;
+	for (auto son : u->sons) dfs2(&syntaxTree[son]);
+}
+
+void printLine(int** layer) {
+	for (int t = 0; t <= syntaxTree[syntaxTree.size() - 1].size; ++t)
+		putchar(layer[0][t] ? '|' : ' ');
+	putchar('\n');
+	for (int t = 0; t <= syntaxTree[syntaxTree.size() - 1].size; ++t)
+		putchar(layer[1][t] ? (char)layer[1][t] : ' ');
+	putchar('\n');
+	for (int t = 0; t <= syntaxTree[syntaxTree.size() - 1].size; ++t)
+		putchar(layer[2][t] ? '-' : ' ');
+	putchar('\n');
+	for (int t = 0; t < 3; ++t)
+		memset(layer[t], 0, sizeof(int) * (syntaxTree[syntaxTree.size() - 1].size + 1));
+}
+
+void printSyntaxTree() {
+	int* layer[3];
+	for (int i = 0; i < 3; ++i) {
+		layer[i] = new int[syntaxTree[syntaxTree.size() - 1].size + 1];
+		memset(layer[i], 0, sizeof(int)*(syntaxTree[syntaxTree.size() - 1].size + 1));
+	}
+	queue<int>que;
+	for (auto son : syntaxTree[syntaxTree.size() - 1].sons)
+		que.push(son);
+	int curDep = 1;
+	while (!que.empty()) {
+		int curNode = que.front();
+		que.pop();
+		if (syntaxTree[curNode].dep > curDep) {
+			printLine(layer);
+			++curDep;
+		}
+		int curPos = syntaxTree[curNode].pos;
+		layer[0][curPos] = 1;
+		for (int t = 0; t < syntaxTree[curNode].content.size(); ++t)
+			layer[1][curPos + t] = syntaxTree[curNode].content[t];
+		for (int t = curPos; syntaxTree[curNode].sons.size() > 0 && t <= (syntaxTree[*syntaxTree[curNode].sons.rbegin()].pos); ++t)
+			layer[2][t] = 1;
+		for (auto son : syntaxTree[curNode].sons)
+			que.push(son);
+		if (que.empty())
+			printLine(layer);
+	}
+}
+
+void yyerror()
+{
+}
